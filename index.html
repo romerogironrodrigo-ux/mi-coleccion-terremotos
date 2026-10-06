@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Colección — Terremotos del Mundo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR (2 enlaces a secciones internas) ===== -->
+    <nav class="navbar">
+        <span class="logo">🌎 Mi Colección</span>
+        <ul class="nav-links">
+            <li><a href="#api">Terremotos recientes</a></li>
+            <li><a href="#coleccion">Mi colección</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== HEADER con el título de la colección ===== -->
+    <header class="hero">
+        <h1>🌋 Mi Colección de Terremotos</h1>
+        <p>Guarda los sismos más impresionantes del planeta y marca tus favoritos ⭐</p>
+    </header>
+
+    <main>
+
+        <!-- ===== CARRUSEL de imágenes ===== -->
+        <section class="carrusel" id="carrusel">
+            <img id="imagen-carrusel" src="img/terremoto1.png" alt="Imagen del carrusel de terremotos">
+            <button class="btn-carrusel prev" id="btn-prev" aria-label="Anterior">&#10094;</button>
+            <button class="btn-carrusel next" id="btn-next" aria-label="Siguiente">&#10095;</button>
+            <div class="puntos" id="puntos"></div>
+        </section>
+
+        <!-- ===== SECCIÓN API: terremotos recientes (USGS) ===== -->
+        <section id="api" class="card">
+            <h2>📡 Terremotos recientes en el mundo (API USGS)</h2>
+            <p class="nota">Datos en vivo del Servicio Geológico de Estados Unidos.</p>
+            <div id="estado-api" class="estado">Cargando datos de la API…</div>
+            <ul id="lista-api" class="lista-api"></ul>
+        </section>
+
+        <!-- ===== SECCIÓN COLECCIÓN ===== -->
+        <section id="coleccion" class="card">
+            <h2>📦 Mi colección</h2>
+
+            <div class="formulario">
+                <input type="text" id="input-nombre" placeholder="Ej: Terremoto de Chile 2010 (M8.8)">
+                <button id="btn-agregar">Agregar</button>
+            </div>
+
+            <ul id="lista-coleccion" class="lista-coleccion"></ul>
+            <p id="mensaje-vacio" class="vacio">Tu colección está vacía. ¡Agrega tu primer terremoto!</p>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>Mi Colección de Terremotos 🌋 — Datos: USGS Earthquake Hazards Program</p>
+        <p>Proyecto escolar · Hecho con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

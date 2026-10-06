@@ -1,0 +1,343 @@
+/* ===== Variables CSS (mínimo 3 colores) ===== */
+:root {
+    --color-primario: #e2543e;      /* rojo volcán */
+    --color-secundario: #1b2a41;    /* azul profundo */
+    --color-acento: #f4a259;        /* naranja magma */
+    --color-fondo: #f6f4f0;         /* fondo claro */
+    --color-tarjeta: #ffffff;
+    --color-texto: #2b2b2b;
+    --sombra: 0 6px 18px rgba(0, 0, 0, 0.12);
+    --radio: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: var(--color-secundario);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: var(--sombra);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efecto :hover */
+.nav-links a:hover {
+    background-color: var(--color-acento);
+    color: var(--color-secundario);
+}
+
+/* ===== HEADER ===== */
+.hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-primario));
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ===== CONTENIDO ===== */
+main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel {
+    position: relative;
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.carrusel img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s;
+}
+
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(27, 42, 65, 0.65);
+    color: #fff;
+    border: none;
+    font-size: 1.4rem;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-carrusel:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 16px; }
+.next { right: 16px; }
+
+.puntos {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.punto.activo,
+.punto:hover {
+    background-color: var(--color-acento);
+    transform: scale(1.25);
+}
+
+/* ===== TARJETAS ===== */
+.card {
+    background-color: var(--color-tarjeta);
+    border-radius: var(--radio);
+    padding: 28px;
+    box-shadow: var(--sombra);
+}
+
+.card h2 {
+    color: var(--color-secundario);
+    margin-bottom: 8px;
+}
+
+.nota {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 16px;
+}
+
+.estado {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: var(--color-fondo);
+    margin-bottom: 16px;
+}
+
+.estado.error {
+    background-color: #fdecea;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* ===== LISTA DE LA API ===== */
+.lista-api {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-api li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 2px solid var(--color-fondo);
+    border-radius: 12px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.lista-api li:hover {
+    border-color: var(--color-acento);
+    transform: translateX(6px);
+}
+
+.magnitud {
+    min-width: 56px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* ===== FORMULARIO ===== */
+.formulario {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0 20px;
+}
+
+.formulario input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.formulario button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-primario);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.formulario button:hover {
+    background-color: var(--color-acento);
+    transform: scale(1.05);
+}
+
+/* ===== LISTA DE LA COLECCIÓN ===== */
+.lista-coleccion {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lista-coleccion li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lista-coleccion li:hover {
+    transform: translateX(6px);
+    box-shadow: var(--sombra);
+}
+
+.lista-coleccion li.favorito {
+    border-left: 6px solid var(--color-acento);
+    background-color: #fff6ec;
+}
+
+.item-nombre {
+    flex: 1;
+}
+
+.item-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-fav,
+.btn-eliminar {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-fav { background-color: #eee; }
+.btn-fav:hover { background-color: var(--color-acento); transform: scale(1.15); }
+
+.btn-eliminar { background-color: #eee; }
+.btn-eliminar:hover { background-color: var(--color-primario); color: #fff; transform: scale(1.15); }
+
+.vacio {
+    text-align: center;
+    opacity: 0.6;
+    padding: 16px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 28px 16px;
+    background-color: var(--color-secundario);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+}
+
+.footer p + p {
+    margin-top: 6px;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 560px) {
+    .navbar { flex-direction: column; gap: 10px; }
+    .carrusel img { height: 240px; }
+    .formulario { flex-direction: column; }
+}
